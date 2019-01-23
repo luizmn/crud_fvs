@@ -22,9 +22,15 @@ def func_create(request):
 
 
 # Deletar funcionario
-def func_delete(request):
+def func_delete(request, id):
     """Excluir funcionario."""
-    return render(request, 'func_delete.html')
+    model = get_object_or_404(Funcionario, pk=id)
+
+    if request.POST:
+        model.delete()
+        return redirect('func_gerenciar')
+
+    return render(request, 'func_delete.html', {'model': model})
 
 
 # Atualizar funcionario

@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 <h3> Excluir Funcionarios </h3>
+<h4>Aten&ccedil;&atilde;o!</h4>
+<p>Deseja excluir o funcion&aacute;rio: <b>{{ model.fnc_nome }} ?</b></p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-default"> Excluir</button>
+    <a href="{% url 'func_gerenciar' %}"><button type="button" class="btn btn-default">Cancelar</button></a>
+</form>
 {% endblock %}

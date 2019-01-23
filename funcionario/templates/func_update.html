@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<h3> Atualizar Funcionarios </h3>
+<h3> Atualizar cadastro </h3>
     <form method="POST">
         {% csrf_token %}
         Nome: {{ form.fnc_nome }}<br><br>
         Matricula: {{ form.fnc_matricula }}<br><br>
-        <button type="submit">Salvar</button>
-        <a href="{% url 'func_gerenciar' %}">Cancelar</a>
+        Estado: {{ form.fnc_estado }}<br><br>
+        <button type="submit" class="btn btn-default">Salvar</button>
+        <a href="{% url 'func_gerenciar' %}"><button type="button" class="btn btn-default">Cancelar</button></a>
     </form>
 
 {% endblock %}

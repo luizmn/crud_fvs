@@ -1,23 +1,33 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h3> Visualizar Funcionarios </h3>
-    <table border=1>
-        <theader>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Matricula</th>
-            <th>A&ccedil;&otilde;es</th>
-        </theader>
-        <tbody>
-            <tr>
-                <td>{{ model.id }}</td>
-                <td>{{ model.fnc_nome }}</td>
-                <td>{{ model.fnc_matricula }}</td>
-                <td>[Visualizar][Editar][Excluir]</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3> Dados do Funcionario </h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Estado</th>
+                <th>A&ccedil;&otilde;es</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ model.id }}</td>
+                    <td>{{ model.fnc_nome }}</td>
+                    <td>{{ model.fnc_matricula }}</td>
+                    <td>{{ model.fnc_estado }}</td>
+                    <td>
+                        <a href="{% url 'func_update' model.id %}">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a href="{% url 'func_delete' model.id %}">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <br>
-    <a href="{% url 'func_gerenciar' %}">Voltar</a>
+    <a href="{% url 'func_gerenciar' %}"><button type="button" class="btn btn-default">Voltar</button></a>
 {% endblock %}
-
