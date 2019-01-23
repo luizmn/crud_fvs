@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h3> Gerenciamento de Funcionarios </h3>
+    <table border=1>
+        <theader>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+            <th>A&ccedil;&otilde;es</th>
+        </theader>
+        <tbody>
+            {% for funcionario in funcionarios %}
+            <tr>
+                <td>{{ funcionario.id }}</td>
+                <td>{{ funcionario.fnc_nome }}</td>
+                <td>{{ funcionario.fnc_matricula }}</td>
+                <td>
+                    <a href="{% url 'func_view' funcionario.id %}">[Visualizar]</a>
+                    <a href="{% url 'func_update' funcionario.id %}">[Editar]</a>
+                    <a href="{% url 'func_delete' %}">[Excluir]</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<tbody>
+</tbody>
+
+{% endblock %}
+

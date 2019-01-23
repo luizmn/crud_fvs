@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h3> Criar Novo Funcionario </h3>
+    <form method="POST">
+        {% csrf_token %}
+        Nome: {{ form.fnc_nome }}<br><br>
+        Matricula: {{ form.fnc_matricula }}<br><br>
+        <button type="submit">Cadastrar</button>
+        <a href="{% url 'func_gerenciar' %}">Cancelar</a>
+    </form>
+{% endblock %}

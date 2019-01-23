@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h3> Visualizar Funcionarios </h3>
+    <table border=1>
+        <theader>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+            <th>A&ccedil;&otilde;es</th>
+        </theader>
+        <tbody>
+            <tr>
+                <td>{{ model.id }}</td>
+                <td>{{ model.fnc_nome }}</td>
+                <td>{{ model.fnc_matricula }}</td>
+                <td>[Visualizar][Editar][Excluir]</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'func_gerenciar' %}">Voltar</a>
+{% endblock %}
+
