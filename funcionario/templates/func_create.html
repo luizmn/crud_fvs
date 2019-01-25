@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h3> Criar Novo Funcionario </h3>
+    <h3> Cadastrar Funcionario </h3>
+
     <form method="POST">
         {% csrf_token %}
-        Nome: {{ form.fnc_nome }}<br><br>
-        Matricula: {{ form.fnc_matricula }}<br><br>
-        Estado: {{ form.fnc_estado }}<br><br>
-        <button type="submit" class="btn btn-default">Cadastrar</button>
-        <a href="{% url 'func_gerenciar' %}"><button type="button" class="btn btn-default">Cancelar</button></a>
-    </form>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      {{ form.fnc_nome }}
+    </div>
+    <div class="form-group">
+      <label for="matricula">Matricula:</label>
+      {{ form.fnc_matricula }}
+    </div>
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      {{ form.fnc_estado }}
+    </div>
+    <div class="form-group">
+      <label for="setor">Setor:</label>
+      {{ setorList.setor_nome }}
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a href="{% url 'func_gerenciar' %}">
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </a>
+    </div>
+
+  </form>
+
 {% endblock %}

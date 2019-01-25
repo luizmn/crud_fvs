@@ -3,9 +3,8 @@
 <h3> Atualizar cadastro </h3>
     <form method="POST">
         {% csrf_token %}
-        Nome: {{ form.fnc_nome }}<br><br>
-        Matricula: {{ form.fnc_matricula }}<br><br>
-        Estado: {{ form.fnc_estado }}<br><br>
+        Setor: {{ form.setor_nome }}<br><br>
+        Unidade: {{ form.setor_unidade }}<br><br>
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="{% url 'func_gerenciar' %}">
             <button type="button" class="btn btn-danger">Cancelar</button>

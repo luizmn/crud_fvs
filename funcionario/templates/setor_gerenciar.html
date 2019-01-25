@@ -1,40 +1,35 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h3> Lista de Funcionarios </h3>
+    <h3> Lista de Setores </h3>
     <div class="table-responsive">
         <div>
-            <a href="{% url 'func_create' %}">
-                <button type="button" class="btn btn-success"> Cadastrar funcion&aacute;rio
-                </button>
-            </a>
             <a href="{% url 'setor_create' %}">
-                <button type="button" class="btn btn-success"> Cadastrar setor
+                <button type="button" class="btn btn-success"> Cadastrar novo setor
                 </button>
             </a>
         </div>
-
         <br>
         <table class="table">
         <theader>
             <th>Id</th>
             <th>Nome</th>
-            <th>Matricula</th>
+            <th>Unidade</th>
             <th>A&ccedil;&otilde;es</th>
         </theader>
         <tbody>
-            {% for funcionario in funcionarios %}
+            {% for setor in setores %}
             <tr>
-                <td>{{ funcionario.id }}</td>
-                <td>{{ funcionario.fnc_nome }}</td>
-                <td>{{ funcionario.fnc_matricula }}</td>
+                <td>{{ setor.id }}</td>
+                <td>{{ setor.setor_nome }}</td>
+                <td>{{ setor.setor_unidade }}</td>
                 <td>
-                    <a href="{% url 'func_view' funcionario.id %}">
+                    <a href="{% url 'setor_view' setor.id %}">
                         <img src="../static/img/info.svg"/>
                     </a>
-                    <a href="{% url 'func_update' funcionario.id %}">
+                    <a href="{% url 'setor_update' setor.id %}">
                         <img src="../static/img/pencil.svg"/>
                     </a>
-                    <a href="{% url 'func_delete' funcionario.id %}">
+                    <a href="{% url 'setor_delete' setor.id %}">
                         <img src="../static/img/trashcan.svg"/>
                     </a>
                 </td>

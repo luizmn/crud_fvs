@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h3> Dados do Funcionario </h3>
+    <h3> Dados do Setor </h3>
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <th>Id</th>
                 <th>Nome</th>
-                <th>Matricula</th>
-                <th>Estado</th>
+                <th>Unidade</th>
                 <th>A&ccedil;&otilde;es</th>
             </thead>
             <tbody>
                 <tr>
                     <td>{{ model.id }}</td>
-                    <td>{{ model.fnc_nome }}</td>
-                    <td>{{ model.fnc_matricula }}</td>
-                    <td>{{ model.fnc_estado }}</td>
+                    <td>{{ model.setor_nome }}</td>
+                    <td>{{ model.setor_unidade }}</td>
                     <td>
-                        <a href="{% url 'func_update' model.id %}">
-
-                            <img src="../../static/img/trashcan.svg"/ alt="Edit">
+                        <a href="{% url 'setor_update' model.id %}">
+                            <img src="../../static/img/pencil.svg"/ alt="Edit">
                         </a>
                         <a href="{% url 'func_delete' model.id %}">
                             <img src="../../static/img/trashcan.svg"/>
@@ -30,7 +27,7 @@
         </table>
     </div>
     <br>
-    <a href="{% url 'func_gerenciar' %}">
+    <a href="{% url 'setor_gerenciar' %}">
         <button type="button" class="btn btn-primary">Voltar</button>
     </a>
 {% endblock %}

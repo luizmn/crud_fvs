@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h3> Excluir setor </h3>
+<h4>Aten&ccedil;&atilde;o!</h4>
+<p>Deseja excluir o setor: <b>{{ model.setor_nome }} ?</b></p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger"> Excluir</button>
+    <a href="{% url 'setor_gerenciar' %}"><button type="button" class="btn btn-primary">Cancelar</button></a>
+</form>
+{% endblock %}
